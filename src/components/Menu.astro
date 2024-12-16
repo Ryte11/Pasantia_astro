@@ -1,23 +1,17 @@
-<nav>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog-main/">Blog</a>
-</nav>
-<style>
-    nav {
-        gap: 60px;
-        display: flex;
-        justify-content: center;
-    }
-    nav a {
-        text-decoration: none;
-        color: black;
-        font-weight: 600;
-        font-size: 30px;
-        transition: all 0.5s;
-    }
-    nav a:hover {
-        transform: translateY(-4px);
-        color: blue;
-    }
-</style>
+---
+import HamburgerAstro from "../components/Hamburger.astro";
+---
+
+<header>
+    <nav class="nav_links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/blog-main/">Blog</a>
+    </nav>
+    <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+</header>
+<style></style>
