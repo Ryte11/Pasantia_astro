@@ -1,6 +1,8 @@
 ---
 import NavMenu from "../components/Menu.astro";
 import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+
 import "./src/styles/Home.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
@@ -86,10 +88,10 @@ const colorSkills = "blue";
 			<li><a href="/posts/post-3/">Post 3</a></li>
 		</ul>
 
+		
+		<Footer />
 		<main>
-			<span>
-				© {currentYear}, {name}.
-			</span>
+			
 		</main>
 	</body>
 </html>
