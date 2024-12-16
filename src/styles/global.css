@@ -15,6 +15,7 @@
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 }
+
 @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-regular.woff') format('woff');
@@ -22,6 +23,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-bold.woff') format('woff');
@@ -29,6 +31,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 body {
 	font-family: 'Atkinson', sans-serif;
 	margin: 0;
@@ -42,12 +45,14 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 }
+
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
 }
+
 h1,
 h2,
 h3,
@@ -58,78 +63,99 @@ h6 {
 	color: rgb(var(--black));
 	line-height: 1.2;
 }
+
 h1 {
 	font-size: 3.052em;
 }
+
 h2 {
 	font-size: 2.441em;
 }
+
 h3 {
 	font-size: 1.953em;
 }
+
 h4 {
 	font-size: 1.563em;
 }
+
 h5 {
 	font-size: 1.25em;
 }
+
 strong,
 b {
 	font-weight: 700;
 }
+
 a {
 	color: var(--accent);
 }
+
 a:hover {
 	color: var(--accent);
 }
+
 p {
 	margin-bottom: 1em;
 }
+
 .prose p {
 	margin-bottom: 2em;
 }
+
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
+
 input {
 	font-size: 16px;
 }
+
 table {
 	width: 100%;
 }
+
 img {
 	max-width: 100%;
 	height: auto;
 	border-radius: 8px;
 }
+
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
 }
+
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
 }
-pre > code {
+
+pre>code {
 	all: unset;
 }
+
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0px;
 	font-size: 1.333em;
 }
+
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
+
 	main {
 		padding: 1em;
 	}
@@ -151,4 +177,158 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+html {
+	background-color: #f1f5f9;
+
+}
+
+:root {
+	--primary-color: #FF0606;
+	--secondary-color: #333;
+	--background-color: #090909;
+	--line-color: #434343;
+	--font-color: black;
+	--font-color-button: #ffff;
+	--font-color-grey: #E9E4E4;
+	--icon-color: #ffff;
+	--font-size-large: 24px;
+	--spacing-small: 8px;
+}
+
+@font-face {
+	font-family: 'inter';
+	src: url('../tipografia/Inter-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+
+	margin: 0 auto;
+	width: 100%;
+	max-width: 100ch;
+	padding: 1rem;
+	line-height: 1.5;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	margin: 1rem 0;
+	font-size: 2.5rem;
+}
+
+nav {
+	gap: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+	font-size: 30px;
+	transition: all 0.5s;
+
+}
+
+nav a:hover {
+	transform: translateY(-4px);
+
+}
+
+
+
+/* info personal */
+
+.contenido-luis {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	gap: 30px;
+
+}
+
+.cont-luis {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70%;
+	gap: 30px;
+}
+
+/* texto */
+
+.text-personal {
+	color: var(--font-color);
+	letter-spacing: 2px;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	font-family: "Atkinson', sans-serif";
+}
+
+.text-personal h1 {
+	font-weight: 400;
+	font-size: 40px;
+	margin-top: 0px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-personal p {
+	color: black;
+	line-height: 28px;
+	letter-spacing: 1px;
+	font-size: 20px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-personal span {
+	color: var(--primary-color);
+	font-weight: 700;
+}
+
+/* boton descargar cv */
+.buton-cv {
+	height: 55px;
+	width: 220px;
+	color: var(--font-color-button);
+	background-color: var(--primary-color);
+	border: none;
+	border-radius: 50px;
+	font-family: inter;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.buton-cv:hover {
+	transform: scale(1.1);
+}
+
+
+/* imagen */
+.img-personal {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.img-personal img {
+	width: 350px;
+	height: 500px;
+	border-radius: 10px;
+	object-fit: cover;
 }

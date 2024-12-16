@@ -3,7 +3,7 @@ import NavMenu from "../components/Menu.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 
-import "./src/styles/Home.css";
+import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const name = "Luisangel Ramirez";
@@ -43,7 +43,7 @@ const colorSkills = "blue";
 					</a>
 				</div>
 				<div class="img-personal">
-					<img src="../src/pages/img/Luisangel.jpg" alt="" />
+					<img src="../src/layouts/img/Luisangel.jpg" alt="" />
 				</div>
 			</div>
 			<div
@@ -88,10 +88,7 @@ const colorSkills = "blue";
 			<li><a href="/posts/post-3/">Post 3</a></li>
 		</ul>
 
-		
 		<Footer />
-		<main>
-			
-		</main>
+		<main></main>
 	</body>
 </html>
