@@ -7,22 +7,71 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 const name = "Hola soy luisangel";
 const date = new Date();
 const currentYear = date.getFullYear();
+
+const titulo = "Este es el inicio de mi pagina en astro";
+const title = "Inicio";
+
+const colorSkills = "blue";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={title} description={SITE_DESCRIPTION} />
+		<style define:vars={{ colorSkills }}>
+			html {
+				background-color: #f1f5f9;
+				font-family: sans-serif;
+			}
+
+			body {
+				margin: 0 auto;
+				width: 100%;
+				max-width: 80ch;
+				padding: 1rem;
+				line-height: 1.5;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			h1 {
+				margin: 1rem 0;
+				font-size: 2.5rem;
+			}
+			nav {
+				gap: 60px;
+				display: flex;
+				justify-content: center;
+			}
+			nav a {
+				text-decoration: none;
+				color: black;
+				font-weight: 600;
+				font-size: 30px;
+				transition: all 0.5s;
+			}
+			nav a:hover {
+				transform: translateY(-4px);
+			}
+		</style>
 	</head>
 	<body>
-		<Header />
-		<h1>Mi sitio web de Astro</h1>
-		<h1>INicio web</h1>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<h2>... and my new Astro site!</h2>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about/">About</a>
+			<a href="/blog/">Blog</a>
+		</nav>
 
+		<h1>{titulo}</h1>
+
+		<p>This is where I will post about my journey learning Astro.</p>
+		<ul>
+			<li><a href="/posts/posts-1/">Post 1</a></li>
+			<li><a href="/posts/post-2/">Post 2</a></li>
+			<li><a href="/posts/post-3/">Post 3</a></li>
+		</ul>
 		<p>
 			I am working through Astro's introductory tutorial. This is the
 			second page on my website, and it's the first one I built myself!

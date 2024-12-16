@@ -1,36 +1,125 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
+const titulo = "About me sobre mi sitio en astro";
+const title = "About";
 const name = "Hola soy luisangel";
 const date = new Date();
 const currentYear = date.getFullYear();
+
+const identidad = {
+	primerNombre: "Luisangel",
+	SegundoNombre: "Ramirez",
+	Pais: "Republica Dominicana",
+	Cargo: "Vendedor de Laptops",
+	Hobbies: ["Programar", "Basketball", "Jugar video juegos"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const colorSkills = "blue";
+const fontsize = "20px";
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style define:vars={{ colorSkills, fontsize }}>
+			html {
+				background-color: #f1f5f9;
+				font-family: sans-serif;
+			}
+
+			body {
+				margin: 0 auto;
+				width: 100%;
+				max-width: 80ch;
+				padding: 1rem;
+				line-height: 1.5;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			h1 {
+				margin: 1rem 0;
+				font-size: 2.5rem;
+			}
+
+			/* code for menu */
+			nav {
+				gap: 60px;
+				display: flex;
+				justify-content: center;
+			}
+			nav a {
+				text-decoration: none;
+				color: black;
+				font-weight: 600;
+				font-size: 30px;
+				transition: all 0.5s;
+			}
+			nav a:hover {
+				transform: translateY(-4px);
+			}
+
+			/* Tabla de skills variables css */
+			.skilss {
+				color: var(--colorSkills);
+				font-weight: bold;
+				font-size: var(--fontsize);
+			}
+		</style>
+		<BaseHead title={title} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<h1>About me sobre mi sitio en astro</h1>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about/">About</a>
+			<a href="/blog/">Blog</a>
+		</nav>
+		<h1>{titulo}</h1>
 
-		<h2>... and my new Astro site!</h2>
+		<ul>
+			<li><a href="/posts/posts-1/">Post 1</a></li>
+			<li><a href="/posts/post-2/">Post 2</a></li>
+			<li><a href="/posts/post-3/">Post 3</a></li>
+		</ul>
+		<p>Aqui unos cuantos datos sobre mi:</p>
+		<ul>
+			<li>Mi nombre es {identidad.primerNombre}.</li>
+			<li>
+				Vivo en {identidad.Pais} Y trabajo de {identidad.Cargo}.
+			</li>
+			{
+				identidad.Hobbies.length >= 2 && (
+					<li>
+						Two of my hobbies are: {identidad.Hobbies[0]} and{" "}
+						{identidad.Hobbies[1]}
+					</li>
+				)
+			}
+		</ul>
+		<p>Mis skills son:</p>
+		<ul>
+			{skills.map((skill) => <li class="skilss">{skill}</li>)}
+		</ul>
 
-		<p>
-			I am working through Astro's introductory tutorial. This is the
-			second page on my website, and it's the first one I built myself!
-		</p>
+		{happy && <p>I am happy to be learning Astro!</p>}
 
-		<p>
-			This site will update as I complete more of the tutorial, so keep
-			checking back and see how my journey is going!
-		</p>
+		{finished && <p>I finished this tutorial!</p>}
+
+		{
+			goal === 3 ? (
+				<p>My goal is to finish in 3 days.</p>
+			) : (
+				<p>My goal is not 3 days.</p>
+			)
+		}
 	</body>
 </html>
