@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import NavMenu from "../components/Menu.astro";
 
 const name = "Hola soy luisangel";
 const date = new Date();
@@ -58,11 +59,7 @@ const titulo = "Este es mi blog";
         <BaseHead title={title} description={SITE_DESCRIPTION} />
     </head>
     <body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-            <a href="/blog/">Blog</a>
-        </nav>
+        <NavMenu />
         <h1>{titulo}</h1>
 
         <ul>

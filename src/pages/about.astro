@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import NavMenu from "../components/Menu.astro";
 
 const titulo = "About me sobre mi sitio en astro";
 const title = "About";
@@ -51,23 +52,6 @@ const fontsize = "20px";
 				font-size: 2.5rem;
 			}
 
-			/* code for menu */
-			nav {
-				gap: 60px;
-				display: flex;
-				justify-content: center;
-			}
-			nav a {
-				text-decoration: none;
-				color: black;
-				font-weight: 600;
-				font-size: 30px;
-				transition: all 0.5s;
-			}
-			nav a:hover {
-				transform: translateY(-4px);
-			}
-
 			/* Tabla de skills variables css */
 			.skilss {
 				color: var(--colorSkills);
@@ -78,11 +62,7 @@ const fontsize = "20px";
 		<BaseHead title={title} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about/">About</a>
-			<a href="/blog/">Blog</a>
-		</nav>
+		<NavMenu />
 		<h1>{titulo}</h1>
 
 		<ul>
