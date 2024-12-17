@@ -1,0 +1,105 @@
+---
+
+interface Props {
+    pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+
+import NavMenu from "../components/Menu.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const name = "Luisangel Ramirez";
+const date = new Date();
+const currentYear = date.getFullYear();
+
+const titulo = "Este es el inicio de mi pagina en astro";
+
+const colorSkills = "blue";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{pageTitle}</title>
+        <meta name="description" content="Descripción de la página" />
+    </head>
+
+    <body>
+        <NavMenu />
+
+        <!-- Principal yo -->
+        <section class="contenido-luis" id="home">
+            <div class="cont-luis">
+                <div class="text-personal">
+                    <div>
+                        <h1>Hola, Yo soy <span>{name}</span></h1>
+                        <h1>Soy principiante en Astro</h1>
+                        <p>
+                            En este sitio web mostrare los conocimientos que he
+                            adquirido gracias al curso de Astro Docs, Utilizando
+                            Componentes y distintos recursos que he ido
+                            aprendiendo.
+                        </p>
+                    </div>
+                    <a href="/about/">
+                        <button class="buton-cv">Ver mas sobre mi</button>
+                    </a>
+                </div>
+                <div class="img-personal">
+                    <img src="/src/assets/img/Luisangel.jpg" alt="" />
+                </div>
+            </div>
+            <div
+                id="overlay"
+                class="overlay"
+                style="display: none;"
+                onclick="closePdfViewer()"
+            >
+            </div>
+            <div id="pdfViewer" class="pdf-viewer" style="display: none;">
+                <div class="downloadPdf">
+                    <button onclick="downloadPdf()" class="downloadPdf"
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            width="44"
+                            height="44"
+                            stroke-width="1.75"
+                        >
+                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"
+                            ></path>
+                            <path d="M7 11l5 5l5 -5"></path>
+                            <path d="M12 4l0 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="pdfContainer" class="pdf"></div>
+                <div class="close-pdf">
+                    <button onclick="closePdfViewer()">Cerrar</button>
+                </div>
+            </div>
+        </section>
+
+        <ul>
+            <li><a href="/posts/posts-1/">Post 1</a></li>
+            <li><a href="/posts/post-2/">Post 2</a></li>
+            <li><a href="/posts/post-3/">Post 3</a></li>
+        </ul>
+        <slot />
+        <Footer />
+        <main></main>
+        <script>
+            import "../Scripts/js";
+        </script>
+    </body>
+</html>
