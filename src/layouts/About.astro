@@ -1,107 +1,194 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import NavMenu from "../components/Menu.astro";
-
-import "../styles/global.css";
-
-const titulo = "About me sobre mi sitio en astro";
-const title = "About";
-const name = "Hola soy luisangel";
-const date = new Date();
-const currentYear = date.getFullYear();
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 
 const identidad = {
     primerNombre: "Luisangel",
-    SegundoNombre: "Ramirez",
-    Pais: "Republica Dominicana",
-    Cargo: "Vendedor de Laptops",
-    Hobbies: ["Programar", "Basketball", "Jugar video juegos"],
+    apellido: "Ramirez Casilla",
+    edad: 16,
+    pais: "Republica Dominicana",
+    cargo: "Vendedor de Laptops",
+    hobbies: ["Programar", "Basketball", "Jugar videojuegos"],
 };
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const colorSkills = "blue";
-const fontsize = "20px";
+const skills = ["HTML", "CSS", "JavaScript"];
+const educacion = [
+    { grado: "Graduado con honores en ITLA", year: "2023" },
+    { grado: "Tecnico Superior en Software", year: "2024" },
+];
+const objetivos = [
+    "Obtener experiencia práctica en desarrollo de software.",
+    "Asumir roles de liderazgo en proyectos.",
+    "Contribuir al avance tecnológico con soluciones innovadoras.",
+];
 ---
 
-<html lang="en">
-    <head>
-        <style define:vars={{ colorSkills, fontsize }}>
-            html {
-                background-color: #f1f5f9;
-                font-family: sans-serif;
-            }
+<style>
+    body {
+        font-family: "Poppins", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f9fb;
+        color: #333;
+    }
 
-            body {
-                margin: 0 auto;
-                width: 100%;
-                max-width: 80ch;
-                padding: 1rem;
-                line-height: 1.5;
-            }
+    header {
+        text-align: center;
+        padding: 2rem 1rem;
+        background: linear-gradient(135deg, #ff7a18, #ffb800);
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-            * {
-                box-sizing: border-box;
-            }
+    header h1 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 700;
+    }
 
-            h1 {
-                margin: 1rem 0;
-                font-size: 2.5rem;
-            }
+    main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-            /* Tabla de skills variables css */
-            .skilss {
-                color: var(--colorSkills);
-                font-weight: bold;
-                font-size: var(--fontsize);
-            }
-        </style>
-        <BaseHead title={title} description={SITE_DESCRIPTION} />
-    </head>
-    <body>
-        <NavMenu />
-        <h1>{titulo}</h1>
+    section {
+        margin-bottom: 3rem;
+    }
 
-        <ul>
-            <li><a href="/posts/posts-1/">Post 1</a></li>
-            <li><a href="/posts/post-2/">Post 2</a></li>
-            <li><a href="/posts/post-3/">Post 3</a></li>
-        </ul>
-        <p>Aqui unos cuantos datos sobre mi:</p>
-        <ul>
-            <li>Mi nombre es {identidad.primerNombre}.</li>
-            <li>
-                Vivo en {identidad.Pais} Y trabajo de {identidad.Cargo}.
-            </li>
-            {
-                identidad.Hobbies.length >= 2 && (
-                    <li>
-                        Two of my hobbies are: {identidad.Hobbies[0]} and{" "}
-                        {identidad.Hobbies[1]}
-                    </li>
-                )
-            }
-        </ul>
-        <p>Mis skills son:</p>
-        <ul>
-            {skills.map((skill) => <li class="skilss">{skill}</li>)}
-        </ul>
+    h2 {
+        color: #ff7a18;
+        border-left: 5px solid #ffb800;
+        padding-left: 10px;
+        margin-bottom: 1rem;
+    }
 
-        {happy && <p>I am happy to be learning Astro!</p>}
+    .info,
+    .skills,
+    .educacion,
+    .objetivos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
 
-        {finished && <p>I finished this tutorial!</p>}
+    .info div,
+    .skills div,
+    .educacion div,
+    .objetivos div {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex: 1 1 calc(50% - 1.5rem);
+    }
 
-        {
-            goal === 3 ? (
-                <p>My goal is to finish in 3 days.</p>
-            ) : (
-                <p>My goal is not 3 days.</p>
-            )
-        }
-    </body>
-</html>
+    .skills ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .skills li {
+        display: inline-block;
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #ffb800;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #333;
+        color: white;
+    }
+</style>
+
+<body>
+    <NavMenu />
+
+    <header>
+        <h1>Sobre Mi</h1>
+        <p>
+            Conoce mas sobre Luisangel Ramirez, programador y apasionado por la
+            tecnología.
+        </p>
+    </header>
+
+    <main>
+        <!-- Información Personal -->
+        <section>
+            <h2>Informacion Personal</h2>
+            <div class="info">
+                <div>
+                    <p>
+                        <strong>Nombre:</strong>
+                        {identidad.primerNombre}
+                        {identidad.apellido}
+                    </p>
+                    <p><strong>Edad:</strong> {identidad.edad} años</p>
+                    <p><strong>Pais:</strong> {identidad.pais}</p>
+                    <p><strong>Cargo Actual:</strong> {identidad.cargo}</p>
+                </div>
+                <div>
+                    <p><strong>Hobbies:</strong></p>
+                    <ul>
+                        {identidad.hobbies.map((hobby) => <li>{hobby}</li>)}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section>
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <ul>
+                    {skills.map((skill) => <li>{skill}</li>)}
+                </ul>
+            </div>
+        </section>
+
+        <!-- Educación -->
+        <section>
+            <h2>Educacion</h2>
+            <div class="educacion">
+                {
+                    educacion.map((edu) => (
+                        <div>
+                            <p>
+                                <strong>{edu.grado}</strong>
+                            </p>
+                            <p>{edu.year}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+
+        <!-- Objetivos -->
+        <section>
+            <h2>Objetivos Profesionales</h2>
+            <div class="objetivos">
+                {
+                    objetivos.map((obj) => (
+                        <div>
+                            <p>{obj}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+
+    <footer>
+        <p>
+            © {new Date().getFullYear()} - Luisangel Ramirez. Todos los derechos
+            reservados.
+        </p>
+    </footer>
+</body>

@@ -1,10 +1,12 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import BaseAbout from "../layouts/About.astro"
+import BaseAbout from "../layouts/About.astro";
 import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import NavMenu from "../components/Menu.astro";
-
+interface Props {
+	pageTitle: string;
+}
 ---
 
 <BaseAbout />
