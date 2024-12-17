@@ -1,4 +1,5 @@
 ---
+import Tittle from "../components/tittle.astro"
 
 interface Props {
     pageTitle: string;
@@ -51,7 +52,7 @@ const colorSkills = "blue";
                     </a>
                 </div>
                 <div class="img-personal">
-                    <img src="/src/assets/img/Luisangel.jpg" alt="" />
+                    <img src="/img/Luisangel.jpg" alt="" />
                 </div>
             </div>
             
@@ -61,7 +62,12 @@ const colorSkills = "blue";
 
        
         <slot />
+        <Tittle >
+            hola
+        </Tittle>
         <Footer />
+        
+
         <main></main>
         <script>
             import "../Scripts/js";
