@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import NavMenu from "../components/Menu.astro";
 
+import MarkdownPostLayout from "../layouts/MarkdownPostLayout.astro";
 import "../styles/global.css";
 const name = "Hola soy luisangel";
 const date = new Date();
@@ -12,6 +13,7 @@ const currentYear = date.getFullYear();
 
 const title = "Blog";
 const titulo = "Este es mi blog";
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -61,6 +63,7 @@ const titulo = "Este es mi blog";
     </head>
     <body>
         <NavMenu />
+        <MarkdownPostLayout />
         <h1>{titulo}</h1>
 
         <ul>

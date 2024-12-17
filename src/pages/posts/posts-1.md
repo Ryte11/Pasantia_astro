@@ -1,8 +1,9 @@
 ---
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Mi primer blog en mark down'
+pubDate: 2024-12-16
+description: 'Este es el primer post de mi blog debo seguir aprendiendo, el uso de componentes y layouts'
+author: 'Luisangel Ramirez estudiante de astro'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
@@ -35,3 +36,5 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
+
+
