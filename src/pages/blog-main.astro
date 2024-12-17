@@ -1,12 +1,19 @@
 ---
+// Componentes
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import NavMenu from "../components/Menu.astro";
 
-import MarkdownPostLayout from "../layouts/MarkdownPostLayout.astro";
 import "../styles/global.css";
+// Markdowns
+import MarkdownPostLayout from "../layouts/MarkdownPostLayout.astro";
+import BlogPost from "../components/blog-post.astro";
+const allPosts = Object.values(
+    import.meta.glob("./posts/*.md", { eager: true }),
+);
+
 const name = "Hola soy luisangel";
 const date = new Date();
 const currentYear = date.getFullYear();
@@ -66,10 +73,13 @@ const { frontmatter } = Astro.props;
         <MarkdownPostLayout />
         <h1>{titulo}</h1>
 
+        
         <ul>
-            <li><a href="/posts/posts-1/">Post 1</a></li>
-            <li><a href="/posts/post-2/">Post 2</a></li>
-            <li><a href="/posts/post-3/">Post 3</a></li>
+            {
+                allPosts.map((post: any) => (
+                    <BlogPost url={post.url} title={post.frontmatter.title} />
+                ))
+            }
         </ul>
         <p>
             I am working through Astro's introductory tutorial. This is the
