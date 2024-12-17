@@ -296,14 +296,16 @@ h1 {
 	justify-content: center;
 	width: 100%;
 	gap: 30px;
+	margin-top: 40px;
 
 }
 
 .cont-luis {
+	margin-top: 50px;
 	display: flex;
 	align-items: center;
 	height: 70%;
-	gap: 30px;
+	gap: 50px;
 }
 
 /* texto */
