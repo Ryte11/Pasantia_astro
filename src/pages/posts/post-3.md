@@ -1,9 +1,9 @@
 ---
-title: My Third Blog Post
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
+title: Mi segundo post para mi Blog
+author: Aprendiz de Astro
+description: "Este es el link a mi portafolio web"
 image:
-    url: "https://docs.astro.build/assets/rays.webp"
+    url: "https://ryte11.github.io/"
     alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
