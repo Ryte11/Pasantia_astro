@@ -9,186 +9,771 @@ const identidad = {
     edad: 16,
     pais: "Republica Dominicana",
     cargo: "Vendedor de Laptops",
+    ocupacion: "Estudiante de Desarrollo Front-End",
+    institucion: "Politécnico ITLA",
     hobbies: ["Programar", "Basketball", "Jugar videojuegos"],
 };
-const skills = ["HTML", "CSS", "JavaScript"];
+
+const skills = {
+    webDev: [
+        { nombre: "HTML", nivel: 96 },
+        { nombre: "CSS", nivel: 90 },
+        { nombre: "JavaScript", nivel: 66 },
+    ],
+    webDesign: [
+        { nombre: "Figma", nivel: 80 },
+        { nombre: "Wordpress", nivel: 60 },
+    ],
+    others: [
+        { nombre: "Microsoft Office", nivel: 70 },
+        { nombre: "Coordinación de equipos", nivel: 85 },
+    ],
+};
+
 const educacion = [
     { grado: "Graduado con honores en ITLA", year: "2023" },
-    { grado: "Tecnico Superior en Software", year: "2024" },
+    { grado: "Técnico Superior en Software", year: "2024" },
+    {
+        grado: "Técnico en Administración de Aplicaciones Web",
+        institucion: "Politécnico ITLA",
+        year: "En curso",
+    },
 ];
+
 const objetivos = [
     "Obtener experiencia práctica en desarrollo de software.",
     "Asumir roles de liderazgo en proyectos.",
     "Contribuir al avance tecnológico con soluciones innovadoras.",
+    "Especializarme en tecnologías front-end modernas.",
+];
+
+const proyectos = [
+    {
+        nombre: "Luxe-Home",
+        descripcion:
+            "Plataforma web para explorar y comprar casas, villas y apartamentos con opciones de compra y alquiler.",
+        tipo: "Proyecto Personal",
+        enlace: "#",
+    },
+    {
+        nombre: "Nes (Non Est Sonitus)",
+        descripcion:
+            "Sistema de monitoreo de ruido que detecta altos decibeles y alerta a la Policía Nacional; permite denuncias y consultas en la web.",
+        tipo: "Proyecto Personal",
+        enlace: "#",
+    },
+    {
+        nombre: "ASAP (Automated Student Attendance Program)",
+        descripcion:
+            "Sistema de asistencia estudiantil automatizado que registra la llegada de estudiantes mediante tarjetas, con interfaces para visualizar gráficos y datos.",
+        tipo: "Proyecto Personal",
+        enlace: "#",
+    },
 ];
 ---
 
-<style>
-    body {
-        font-family: "Poppins", Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f8f9fb;
-        color: #333;
-    }
+<html lang="es">
+    <head>
+        <BaseHead/>
+        <title>Sobre Mi | Luisangel Ramirez</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary-color: #3a86ff;
+                --secondary-color: #8338ec;
+                --accent-color: #ff006e;
+                --light-bg: #f8f9fa;
+                --dark-bg: #212529;
+                --text-color: #343a40;
+                --light-text: #f8f9fa;
+                --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
 
-    header {
-        text-align: center;
-        padding: 2rem 1rem;
-        background: linear-gradient(135deg, #ff7a18, #ffb800);
-        color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+            body {
+                font-family: "Poppins", Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: var(--light-bg);
+                color: var(--text-color);
+                line-height: 1.6;
+            }
 
-    header h1 {
-        margin: 0;
-        font-size: 3rem;
-        font-weight: 700;
-    }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
 
-    main {
-        padding: 2rem;
-        max-width: 1200px;
-        margin: auto;
-    }
+            header {
+                text-align: center;
+                padding: 4rem 1rem 6rem;
+                position: relative;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-color),
+                    var(--secondary-color)
+                );
+                color: white;
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+                margin-bottom: 2rem;
+            }
 
-    section {
-        margin-bottom: 3rem;
-    }
+            header h1 {
+                margin: 0;
+                font-size: 3.5rem;
+                font-weight: 700;
+                letter-spacing: -0.5px;
+            }
 
-    h2 {
-        color: #ff7a18;
-        border-left: 5px solid #ffb800;
-        padding-left: 10px;
-        margin-bottom: 1rem;
-    }
+            header p {
+                font-size: 1.2rem;
+                max-width: 700px;
+                margin: 1rem auto;
+                opacity: 0.9;
+            }
 
-    .info,
-    .skills,
-    .educacion,
-    .objetivos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
+            .profile-image {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                border: 5px solid white;
+                box-shadow: var(--card-shadow);
+                margin: 0 auto 1rem;
+                object-fit: cover;
+                background-color: #f0f0f0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 5rem;
+                color: var(--primary-color);
+            }
 
-    .info div,
-    .skills div,
-    .educacion div,
-    .objetivos div {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        flex: 1 1 calc(50% - 1.5rem);
-    }
+            main {
+                padding: 0 1rem 3rem;
+            }
 
-    .skills ul {
-        list-style: none;
-        padding: 0;
-    }
+            section {
+                margin-bottom: 4rem;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeIn 0.6s ease-out forwards;
+            }
 
-    .skills li {
-        display: inline-block;
-        margin: 0.5rem;
-        padding: 0.5rem 1rem;
-        background-color: #ffb800;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-    }
+            section:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            section:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+            section:nth-child(4) {
+                animation-delay: 0.6s;
+            }
+            section:nth-child(5) {
+                animation-delay: 0.8s;
+            }
 
-    footer {
-        text-align: center;
-        padding: 1rem;
-        background-color: #333;
-        color: white;
-    }
-</style>
-
-<body style="max-width: 100%;">
-    <NavMenu />
-
-    <header>
-        <h1>Sobre Mi</h1>
-        <p>
-            Conoce mas sobre Luisangel Ramirez, programador y apasionado por la
-            tecnología.
-        </p>
-    </header>
-
-    <main>
-        <!-- Información Personal -->
-        <section>
-            <h2>Informacion Personal</h2>
-            <div class="info">
-                <div>
-                    <p>
-                        <strong>Nombre:</strong>
-                        {identidad.primerNombre}
-                        {identidad.apellido}
-                    </p>
-                    <p><strong>Edad:</strong> {identidad.edad} años</p>
-                    <p><strong>Pais:</strong> {identidad.pais}</p>
-                    <p><strong>Cargo Actual:</strong> {identidad.cargo}</p>
-                </div>
-                <div>
-                    <p><strong>Hobbies:</strong></p>
-                    <ul>
-                        {identidad.hobbies.map((hobby) => <li>{hobby}</li>)}
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Habilidades -->
-        <section>
-            <h2>Habilidades</h2>
-            <div class="skills">
-                <ul>
-                    {skills.map((skill) => <li>{skill}</li>)}
-                </ul>
-            </div>
-        </section>
-
-        <!-- Educación -->
-        <section>
-            <h2>Educacion</h2>
-            <div class="educacion">
-                {
-                    educacion.map((edu) => (
-                        <div>
-                            <p>
-                                <strong>{edu.grado}</strong>
-                            </p>
-                            <p>{edu.year}</p>
-                        </div>
-                    ))
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
-            </div>
-        </section>
+            }
 
-        <!-- Objetivos -->
-        <section>
-            <h2>Objetivos Profesionales</h2>
-            <div class="objetivos">
-                {
-                    objetivos.map((obj) => (
-                        <div>
-                            <p>{obj}</p>
-                        </div>
-                    ))
+            .section-title {
+                position: relative;
+                color: var(--primary-color);
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                display: inline-block;
+                padding-bottom: 0.5rem;
+            }
+
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60%;
+                height: 4px;
+                background: linear-gradient(
+                    to right,
+                    var(--accent-color),
+                    var(--secondary-color)
+                );
+                border-radius: 2px;
+            }
+
+            .info-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+
+            .card {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: var(--card-shadow);
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow:
+                    0 20px 25px -5px rgba(0, 0, 0, 0.15),
+                    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+            .card-title {
+                color: var(--secondary-color);
+                margin-top: 0;
+                font-size: 1.3rem;
+                border-bottom: 2px solid #f0f0f0;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .info-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .info-list li {
+                padding: 0.5rem 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .info-list li:before {
+                content: "•";
+                color: var(--accent-color);
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-right: 0.5em;
+            }
+
+            .skill-bar {
+                height: 10px;
+                background: #e9ecef;
+                border-radius: 5px;
+                margin-bottom: 1.5rem;
+                position: relative;
+                overflow: hidden;
+            }
+            .skill-progress-container {
+                width: 100%;
+                background: #eee;
+                height: 10px;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .skill-progress {
+                height: 100%;
+                background-color: #007bff;
+                width: 0;
+                transition: width 1s ease-in-out;
+            }
+            .skill-progress {
+                height: 100%;
+                background: linear-gradient(
+                    to right,
+                    var(--primary-color),
+                    var(--secondary-color)
+                );
+                border-radius: 5px;
+                width: 0;
+                animation: progressAnimation 1.5s ease-out forwards;
+            }
+
+            @keyframes progressAnimation {
+                to {
+                    width: var(--progress);
                 }
+            }
+
+            .skill-label {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+            }
+
+            .proyecto-card {
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: var(--card-shadow);
+                margin-bottom: 2rem;
+                transition: transform 0.3s ease;
+            }
+
+            .proyecto-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .proyecto-header {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-color),
+                    var(--secondary-color)
+                );
+                color: white;
+                padding: 1.5rem;
+            }
+
+            .proyecto-header h3 {
+                margin: 0;
+                font-size: 1.5rem;
+            }
+
+            .proyecto-body {
+                padding: 1.5rem;
+            }
+
+            .proyecto-tipo {
+                background: #e9ecef;
+                display: inline-block;
+                padding: 0.25rem 0.75rem;
+                border-radius: 50px;
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .proyecto-enlace {
+                display: inline-block;
+                margin-top: 1rem;
+                background: var(--primary-color);
+                color: white;
+                padding: 0.5rem 1.5rem;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: background 0.3s ease;
+            }
+
+            .proyecto-enlace:hover {
+                background: var(--secondary-color);
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem 1rem;
+                background-color: var(--dark-bg);
+                color: var(--light-text);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                padding-top: 6rem;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--primary-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.3s ease;
+            }
+
+            .social-icon:hover {
+                background: var(--accent-color);
+            }
+
+            @media (max-width: 768px) {
+                header {
+                    padding: 3rem 1rem 5rem;
+                }
+
+                header h1 {
+                    font-size: 2.5rem;
+                }
+
+                .profile-image {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                .section-title {
+                    font-size: 1.75rem;
+                }
+            }
+        </style></head
+    >
+
+    <body>
+        <NavMenu />
+
+        <header>
+            <div class="container">
+                <div class="profile-image">LR</div>
+                <h1>Luisangel Ramirez</h1>
+                <p>
+                    Desarrollador Front-End | Estudiante | Apasionado por la
+                    tecnología
+                </p>
             </div>
-        </section>
-    </main>
+        </header>
 
-    <Footer />
+        <main class="container">
+            <!-- Información Personal -->
+            <section>
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="info-grid">
+                    <div class="card">
+                        <h3 class="card-title">¿Quién Soy?</h3>
+                        <p>
+                            Soy un estudiante de Desarrollo Front-End con
+                            experiencia en proyectos escolares. Mi enfoque está
+                            en crear interfaces de usuario atractivas y
+                            funcionales, utilizando HTML, CSS y JavaScript.
+                            Actualmente estudiando Técnico en Administración de
+                            Aplicaciones Web en el Politécnico ITLA, con
+                            experiencia en desarrollo web front-end, bases de
+                            datos y prototipado.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Información Personal</h3>
+                        <ul class="info-list">
+                            <li>
+                                <strong>Nombre:</strong>
+                                {identidad.primerNombre}
+                                {identidad.apellido}
+                            </li>
+                            <li>
+                                <strong>Edad:</strong>
+                                {identidad.edad} años
+                            </li>
+                            <li><strong>País:</strong> {identidad.pais}</li>
+                            <li>
+                                <strong>Ocupación:</strong>
+                                {identidad.ocupacion}
+                            </li>
+                            <li>
+                                <strong>Cargo Actual:</strong>
+                                {identidad.cargo}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Hobbies & Intereses</h3>
+                        <ul class="info-list">
+                            {identidad.hobbies.map((hobby) => <li>{hobby}</li>)}
+                            <li>Explorar nuevas tecnologías</li>
+                            <li>Aprender sobre desarrollo de aplicaciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <footer>
-        <p>
-            © {new Date().getFullYear()} - Luisangel Ramirez. Todos los derechos
-            reservados.
-        </p>
-    </footer>
-</body>
+            <!-- Proyectos -->
+            <section>
+                <h2 class="section-title">Mis Proyectos</h2>
+                <div class="info-grid">
+                    {
+                        proyectos.map((proyecto) => (
+                            <div class="proyecto-card">
+                                <div class="proyecto-header">
+                                    <h3>{proyecto.nombre}</h3>
+                                </div>
+                                <div class="proyecto-body">
+                                    <div class="proyecto-tipo">
+                                        {proyecto.tipo}
+                                    </div>
+                                    <p>{proyecto.descripcion}</p>
+                                    <a
+                                        href={proyecto.enlace}
+                                        class="proyecto-enlace"
+                                    >
+                                        Ver Proyecto
+                                    </a>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+            <script>
+                const skills = {
+                    webDev: [
+                        { nombre: "HTML", nivel: 80 },
+                        { nombre: "CSS", nivel: 70 },
+                        { nombre: "JavaScript", nivel: 85 },
+                    ],
+                    webDesign: [
+                        { nombre: "Figma", nivel: 75 },
+                        { nombre: "Adobe XD", nivel: 65 },
+                    ],
+                    others: [
+                        { nombre: "Git", nivel: 60 },
+                        { nombre: "SEO", nivel: 55 },
+                    ],
+                };
+            </script>
+            <!-- Habilidades -->
+            <section>
+                <h2 class="section-title">Mis Habilidades</h2>
+                <div class="info-grid">
+                    <div class="card">
+                        <h3 class="card-title">Desarrollo Web</h3>
+                        {
+                            skills.webDev.map((skill) => (
+                                <div>
+                                    <div class="skill-label">
+                                        <span>{skill.nombre}</span>
+                                        <span>{skill.nivel}%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress-container">
+                                            <div
+                                                class="skill-progress"
+                                                data-progress={`${skill.nivel}%`}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Diseño Web</h3>
+                        {
+                            skills.webDesign.map((skill) => (
+                                <div>
+                                    <div class="skill-label">
+                                        <span>{skill.nombre}</span>
+                                        <span>{skill.nivel}%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress-container">
+                                            <div
+                                                class="skill-progress"
+                                                data-progress={`${skill.nivel}%`}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Otras Habilidades</h3>
+                        {
+                            skills.others.map((skill) => (
+                                <div>
+                                    <div class="skill-label">
+                                        <span>{skill.nombre}</span>
+                                        <span>{skill.nivel}%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress-container">
+                                            <div
+                                                class="skill-progress"
+                                                data-progress={`${skill.nivel}%`}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <!-- Educación -->
+            <section>
+                <h2 class="section-title">Educación</h2>
+                <div class="info-grid">
+                    {
+                        educacion.map((edu) => (
+                            <div class="card">
+                                <h3 class="card-title">{edu.year}</h3>
+                                <p>
+                                    <strong>{edu.grado}</strong>
+                                </p>
+                                {edu.institucion && <p>{edu.institucion}</p>}
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Objetivos -->
+            <section>
+                <h2 class="section-title">Objetivos Profesionales</h2>
+                <div class="info-grid">
+                    {
+                        objetivos.map((obj, index) => (
+                            <div class="card">
+                                <h3 class="card-title">Objetivo {index + 1}</h3>
+                                <p>{obj}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </main>
+
+        <Footer />
+
+        <footer>
+            <div class="container">
+                <div class="social-links">
+                    <a href="#" class="social-icon">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path
+                                d="M6 9H2V21H6V9Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path
+                                d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 3.28344C14.0247 3.60968 13.2884 4.1942 12.773 4.95372C12.2575 5.71324 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path
+                                d="M16 8V8.001"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="5"
+                                stroke="white"
+                                stroke-width="2"></rect>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.75 9.41414 20.7228 6.93419 18.8943 5.10571C17.0658 3.27723 14.5859 2.25 12 2.25ZM15.75 8.25H14.25C14.0511 8.25 13.8603 8.32902 13.7197 8.46967C13.579 8.61032 13.5 8.80109 13.5 9V9.75H15.75V11.25H13.5V15.75H12V11.25H9.75V9.75H12V8.625C12 7.72989 12.3556 6.87145 12.9885 6.23851C13.6215 5.60558 14.4799 5.25 15.375 5.25H15.75V8.25Z"
+                                fill="white"></path>
+                        </svg>
+                    </a>
+                </div>
+                <p>
+                    © {new Date().getFullYear()} - Luisangel Ramirez. Todos los
+                    derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            // Animación de barras de progreso al hacer scroll
+            const observerOptions = {
+                threshold: 0.5,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const skillBars =
+                            entry.target.querySelectorAll(".skill-progress");
+                        skillBars.forEach((bar) => {
+                            const progress = bar.dataset.progress;
+                            if (progress) {
+                                bar.style.width = progress;
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll(".card").forEach((card) => {
+                if (card.querySelector(".skill-progress")) {
+                    observer.observe(card);
+                }
+            });
+        </script>
+    </body>
+</html>
