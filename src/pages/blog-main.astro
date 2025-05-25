@@ -302,64 +302,66 @@ const { frontmatter } = Astro.props;
                 <h2 class="section-title">Publicaciones Recientes</h2>
                 <div class="posts-grid">
                     {
-                        allPosts.map((post: any) => (
-                            <article class="post-card">
-                                <div class="post-image" />
-                                <div class="post-content">
-                                    <h3>{post.frontmatter.title}</h3>
-                                    <p>
-                                        {post.frontmatter.description ||
-                                            "Una publicación sobre desarrollo web y tecnología."}
-                                    </p>
-                                    <a href={post.url} class="post-link">
-                                        Leer más →
-                                    </a>
-                                </div>
-                            </article>
-                        ))
-                    }
-
-                    <!-- Si no hay suficientes posts, añadimos algunos placeholders -->
-                    {
-                        allPosts.length < 3 && (
-                            <article class="post-card">
-                                <div class="post-image" />
-                                <div class="post-content">
-                                    <h3>Mis Proyectos Favoritos</h3>
-                                    <p>
-                                        Una revisión de los proyectos más
-                                        interesantes en los que he trabajado
-                                        recientemente.
-                                    </p>
-                                    <a
-                                        href="about.astro"
-                                        class="post-link"
-                                    >
-                                        Próximamente →
-                                    </a>
-                                </div>
-                            </article>
+                        allPosts.length === 0 ? (
+                            <>
+                                <article class="post-card">
+                                    <div class="post-image" />
+                                    <div class="post-content">
+                                        <h3>Aprende Astro</h3>
+                                        <p>
+                                            Descubre cómo crear sitios web modernos y rápidos con Astro, el framework todo en uno.
+                                        </p>
+                                        <a href="https://astro.build" target="_blank" class="post-link">
+                                            Visitar Astro →
+                                        </a>
+                                    </div>
+                                </article>
+                    
+                                <article class="post-card">
+                                    <div class="post-image" />
+                                    <div class="post-content">
+                                        <h3>Mis Proyectos Actuales</h3>
+                                        <p>
+                                            Conoce los proyectos en los que estoy trabajando y mi proceso de aprendizaje.
+                                        </p>
+                                        <a href="/about" class="post-link">
+                                            Ver proyectos →
+                                        </a>
+                                    </div>
+                                </article>
+                    
+                                <article class="post-card">
+                                    <div class="post-image" />
+                                    <div class="post-content">
+                                        <h3>Mi Portafolio en GitHub</h3>
+                                        <p>
+                                            Explora mi código, contribuciones y proyectos personales en GitHub.
+                                        </p>
+                                        <a href="https://github.com/Ryte11" target="_blank" class="post-link">
+                                            Ver GitHub →
+                                        </a>
+                                    </div>
+                                </article>
+                            </>
+                        ) : (
+                            allPosts.map((post: any) => (
+                                <article class="post-card">
+                                    <div class="post-image" />
+                                    <div class="post-content">
+                                        <h3>{post.frontmatter.title}</h3>
+                                        <p>
+                                            {post.frontmatter.description ||
+                                                "Una publicación sobre desarrollo web y tecnología."}
+                                        </p>
+                                        <a href={post.url} class="post-link">
+                                            Leer más →
+                                        </a>
+                                    </div>
+                                </article>
+                            ))
                         )
                     }
 
-                    {
-                        allPosts.length < 2 && (
-                            <article class="post-card">
-                                <div class="post-image" />
-                                <div class="post-content">
-                                    <h3>Tecnologías que estoy aprendiendo</h3>
-                                    <p>
-                                        Un vistazo a las nuevas tecnologías que
-                                        estoy explorando para mejorar mis
-                                        habilidades de desarrollo.
-                                    </p>
-                                    <a href="#" class="post-link">
-                                        Próximamente →
-                                    </a>
-                                </div>
-                            </article>
-                        )
-                    }
                 </div>
             </section>
 

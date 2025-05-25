@@ -1,43 +1,46 @@
 ---
-title: Mi segundo post para mi Blog
-author: Aprendiz de Astro
-description: "Luego de aprender un poco de Astro, seguire practicando."
+title: Mi segundo post en el Blog
+author: Luisangel Ramirez
+description: "Después de aprender lo básico de Astro, continuaré practicando y mejorando mis habilidades."
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
 pubDate: 2025-05-08
-tags: ["astro", "blogging", "learning in public", "successes"]
+tags: ["astro", "desarrollo web", "aprendizaje", "progreso"]
 ---
 
+# Mi Viaje con Astro
 
+Publicado el: 2025-05-08
 
-# My First Blog Post
+¡Bienvenidos a mi blog sobre mi experiencia aprendiendo Astro! Aquí compartiré mi viaje mientras construyo mi primer sitio web profesional.
 
-Published on: 2022-07-01
+## Lo que he logrado hasta ahora
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+1. **Instalación de Astro**: Primero, creé mi proyecto en Astro y configuré mi entorno de desarrollo.
 
-## What I've accomplished
+2. **Creación de Páginas**: Aprendí a crear páginas utilizando archivos `.astro` y a organizarlos en la carpeta `src/pages/`.
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+3. **Desarrollo del Blog**: ¡Este es mi segundo post! Ya manejo las páginas de Astro y los posts en Markdown.
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+## Mis próximos pasos
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
+Ya que sabes un poco de lo que he aprendido, te invito a [visitar mi portafolio en GitHuB](https://github.com/Ryte11) para ver más de mi trabajo.
 
-## What's next
+Continuaré con el tutorial de Astro y seguiré añadiendo más contenido. ¡Mantente atento para ver más actualizaciones!
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+### Mis objetivos actuales
 
+- [x] Crear la estructura básica del blog
+- [ ] Mejorar el diseño y la experiencia de usuario
+- [ ] Añadir más contenido y proyectos
+- [ ] Implementar nuevas funcionalidades
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
-
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-
-
-
-este es mi sengundo post de astro, pondre un link para que te envie hacia atras
+| Tecnología | Nivel        | Estado     |
+| :---       |    :----:    |      ---:  |
+| HTML       | Avanzado   | Dominado   |
+| CSS        | Avanzado   | Dominado
+| JavaScript | Intermedio | Aprendiendo|
+| Tailwind | Principiante | Aprendiendo|
+| PHP | Intermedio | Aprendiendo|
+| Boostrap | Intermedio | Aprendiendo|
+| Boostrap | Intermedio | Aprendiendo|
+| SQL | Intermedio | Aprendiendo|
