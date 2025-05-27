@@ -1,68 +1,171 @@
-# Astro Starter Kit: Blog
+# 🌟 Portfolio Personal - Luisangel Ramirez
 
-```sh
-npm create astro@latest -- --template blog
+<div align="center">
+  <img src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white" alt="Astro">
+  <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <br>
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Version-1.0-green.svg?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge" alt="Status">
+</div>
+
+## ✨ Características
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎨 **Diseño Moderno**
+- Interfaz minimalista y profesional
+- Gradientes vibrantes azul/morado
+- Animaciones CSS suaves
+- Sistema de tarjetas con efectos 3D
+- Tema responsive y accesible
+
+</td>
+<td width="50%">
+
+### 🚀 **Funcionalidades**
+- 📄 Página "Sobre Mí" interactiva
+- 📝 Blog personal integrado
+- 💼 Showcase de proyectos
+- 📊 Barras de progreso de habilidades
+- 📱 Diseño completamente responsive
+
+</td>
+</tr>
+</table>
+
+## 🎯 Demo en Vivo
+
+🔗 **[Ver Portfolio](https://pasantia-astro-luis.netlify.app)**
+
+## 👨‍💻 Sobre Mí
+
+Soy **Luisangel Ramirez**, un estudiante de 16 años de Desarrollo Front-End con pasión por crear interfaces atractivas y funcionales. Actualmente estudio Técnico en Administración de Aplicaciones Web en el **Politécnico ITLA** en República Dominicana.
+
+### 🎯 Especialidades
+- **Desarrollo Front-End** con HTML, CSS y JavaScript
+- **Prototipado** y diseño de interfaces
+- **Bases de datos** y sistemas web
+- **Liderazgo** y coordinación de equipos
+
+## 🛠️ Tecnologías Utilizadas
+
+<div align="center">
+  
+| Categoría | Tecnologías |
+|-----------|-------------|
+| **Framework** | Astro 4.x |
+| **Frontend** | HTML5, CSS3, JavaScript ES6+ |
+| **Estilos** | CSS Grid, Flexbox, Animations |
+| **Tipografía** | Google Fonts (Poppins) |
+| **Iconos** | Lucide Icons, SVG Custom |
+
+</div>
+
+## 🚀 Proyectos Destacados
+
+<details>
+<summary><b>🏠 Luxe-Home</b></summary>
+
+- **Descripción**: Plataforma web para explorar y comprar casas, villas y apartamentos
+- **Características**: Sistema de compra y alquiler integrado
+- **Tecnologías**: HTML, CSS, JavaScript
+- **Estado**: Proyecto Personal Completado
+
+</details>
+
+<details>
+<summary><b>🔊 Nes (Non Est Sonitus)</b></summary>
+
+- **Descripción**: Sistema de monitoreo de ruido con alertas automáticas
+- **Características**: Detección de decibeles, integración con Policía Nacional
+- **Tecnologías**: JavaScript, APIs Web
+- **Estado**: Proyecto Personal Completado
+
+</details>
+
+<details>
+<summary><b>📚 ASAP (Automated Student Attendance Program)</b></summary>
+
+- **Descripción**: Sistema automatizado de asistencia estudiantil
+- **Características**: Registro por tarjetas, gráficos interactivos
+- **Tecnologías**: JavaScript, Chart.js
+- **Estado**: Proyecto Personal Completado
+
+</details>
+
+## 💡 Características del Portfolio
+
+<details>
+<summary><b>🌈 Diseño Visual</b></summary>
+
+- **Paleta de colores moderna**: Azul (#3a86ff), Morado (#8338ec), Rosa (#ff006e)
+- **Efectos glassmorphism** con backdrop-filter
+- **Animaciones de entrada** staggered para secciones
+- **Hover effects** interactivos en tarjetas
+- **Barras de progreso animadas** para habilidades
+
+</details>
+
+<details>
+<summary><b>⚡ Experiencia de Usuario</b></summary>
+
+- **Navegación intuitiva** entre secciones
+- **Carga rápida** optimizada con Astro
+- **Responsive design** para todos los dispositivos
+- **Accesibilidad** con semantic HTML
+- **SEO optimizado** con meta tags
+
+</details>
+
+## 📊 Mis Habilidades
+
+```
+Desarrollo Web:
+├── HTML          ████████████████████ 96%
+├── CSS           ███████████████████░ 90%
+└── JavaScript    █████████████░░░░░░░ 66%
+
+Diseño Web:
+├── Figma         ████████████████░░░░ 80%
+└── WordPress     ████████████░░░░░░░░ 60%
+
+Otras:
+├── Microsoft Office      ██████████████░░░░░░ 70%
+└── Coordinación Equipos  █████████████████░░░ 85%
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 🎯 Objetivos del Proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- ✅ Crear una presencia web profesional
+- ✅ Mostrar habilidades de desarrollo front-end
+- ✅ Documentar mi progreso como desarrollador
+- ✅ Implementar las mejores prácticas de desarrollo
+- 🔄 Continuar añadiendo nuevos proyectos
+- 🔄 Mejorar constantemente el diseño y funcionalidad
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
 
-Features:
+## 📞 Contacto
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+<div align="center">
 
-## 🚀 Project Structure
+| Plataforma | Enlace |
+|------------|--------|
+| 📧 **Email** | luisangel@email.com |
+| 💼 **LinkedIn** | [linkedin.com/in/luisangel-ramirez](https://www.linkedin.com/in/luisangel-ramirez-b37a7b309/) |
+| 🐙 **GitHub** | [github.com/tu-usuario](https://github.com/Ryte11?tab=repositories) |
+| 🌐 **Portfolio** | [tu-portfolio.com](https://ryte11.github.io) |
 
-Inside of your Astro project, you'll see the following folders and files:
+</div>
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+<div align="center">
+  <b>⭐ Si te gusta este proyecto, ¡dale una estrella! ⭐</b>
+  <br><br>
+</div>
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+---
