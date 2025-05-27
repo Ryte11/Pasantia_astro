@@ -1,4 +1,4 @@
-	/*
+/*
 	The CSS in this style tag is based off of Bear Blog's default CSS.
 	https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
 	License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
@@ -240,35 +240,124 @@
 	transform: translateY(-4px);
 	color: #000d8a;
 	}
+
 	.hamburger{
 		display: none;
 	}
 
-	@media screen and (max-width: 636px) {
-	.nav_links {
-		display: none;
-	}
+	/* info personal */
 
-	
-	.nav_links a {
-		display: inline-block;
-		padding: 15px 20px;
-	}
-
-	.hamburger {
-		display: block;
-	}
-	}
-	@media screen and (max-width: 756px) {
-	.cont-luis{
+	.contenido-luis {
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content:flex-start;
-		height: 100vh;
-	}
+		justify-content: center;
+		width: 100%;
+		gap: 30px;
+		margin-top: 40px;
+		margin-bottom: 200px;
+
 	}
 
+	@media screen and (max-width: 636px) {
+		.nav_links {
+			display: none;
+		}
+
+		
+		.nav_links a {
+			display: inline-block;
+			padding: 15px 20px;
+		}
+
+		.hamburger {
+			display: block;
+		}
+	}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 480px) {
+    .contenido-luis .cont-luis {
+        padding: 10px;
+        width: 95%;
+    }
+
+    .contenido-luis .text-personal h1 {
+        font-size: 28px;
+    }
+
+    .contenido-luis .text-personal p {
+        font-size: 16px;
+    }
+}
+/* Base styles for cont-luis */
+.cont-luis {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    height: 70%;
+    gap: 50px;
+    width: 100%;
+}
+
+@media screen and (max-width: 956px) {
+    .contenido-luis .cont-luis {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        gap: 30px;
+        margin: 20px auto;
+    }
+
+    .contenido-luis .text-personal {
+        width: 100%;
+        text-align: center;
+		align-items: center;
+    }
+
+    .contenido-luis .img-personal {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contenido-luis .img-personal img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 480px) {
+    .contenido-luis .cont-luis {
+        padding: 10px;
+        width: 95%;
+    }
+
+    .contenido-luis .text-personal h1 {
+        font-size: 28px;
+    }
+
+    .contenido-luis .text-personal p {
+        font-size: 16px;
+    }
+}
+	@media screen and (max-width: 480px) {
+		.cont-luis {
+			padding: 10px;
+		}
+	
+		.text-personal h1 {
+			font-size: 30px;
+		}
+	
+		.text-personal p {
+			font-size: 16px;
+		}
+	}
 
 	/* Hamburguesa menú */
 	.hamburger {
@@ -285,30 +374,13 @@
 	}
 
 	.nav_links.expanded {
-	display: block;
+	display: flex;
+	flex-direction: column;
 	}
 
 
 
-	/* info personal */
-
-	.contenido-luis {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-		gap: 30px;
-		margin-top: 40px;
-		margin-bottom: 200px;
-
-	}
-
-	.cont-luis {
-		margin-top: 50px;
-		display: flex;
-		align-items: center;
-		height: 70%;
-		gap: 50px;
-	}
+	
 
 	/* texto */
 

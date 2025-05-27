@@ -34,6 +34,7 @@ const { frontmatter } = Astro.props;
 <html lang="es">
     <head>
         <BaseHead title={title} description={SITE_DESCRIPTION} />
+
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -276,7 +277,23 @@ const { frontmatter } = Astro.props;
 
     <body>
         <NavMenu />
+        <script is:inline>
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav_links");
 
+            hamburger?.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks?.classList.toggle("active");
+            });
+
+            // Cerrar menú al hacer click en un enlace
+            document.querySelectorAll(".nav_links a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    hamburger?.classList.remove("active");
+                    navLinks?.classList.remove("active");
+                });
+            });
+        </script>
         <header class="header">
             <div class="header-content">
                 <h1 class="header-title">{titulo}</h1>
@@ -309,35 +326,48 @@ const { frontmatter } = Astro.props;
                                     <div class="post-content">
                                         <h3>Aprende Astro</h3>
                                         <p>
-                                            Descubre cómo crear sitios web modernos y rápidos con Astro, el framework todo en uno.
+                                            Descubre cómo crear sitios web
+                                            modernos y rápidos con Astro, el
+                                            framework todo en uno.
                                         </p>
-                                        <a href="https://astro.build" target="_blank" class="post-link">
+                                        <a
+                                            href="https://astro.build"
+                                            target="_blank"
+                                            class="post-link"
+                                        >
                                             Visitar Astro →
                                         </a>
                                     </div>
                                 </article>
-                    
+
                                 <article class="post-card">
                                     <div class="post-image" />
                                     <div class="post-content">
                                         <h3>Mis Proyectos Actuales</h3>
                                         <p>
-                                            Conoce los proyectos en los que estoy trabajando y mi proceso de aprendizaje.
+                                            Conoce los proyectos en los que
+                                            estoy trabajando y mi proceso de
+                                            aprendizaje.
                                         </p>
                                         <a href="/about" class="post-link">
                                             Ver proyectos →
                                         </a>
                                     </div>
                                 </article>
-                    
+
                                 <article class="post-card">
                                     <div class="post-image" />
                                     <div class="post-content">
                                         <h3>Mi Portafolio en GitHub</h3>
                                         <p>
-                                            Explora mi código, contribuciones y proyectos personales en GitHub.
+                                            Explora mi código, contribuciones y
+                                            proyectos personales en GitHub.
                                         </p>
-                                        <a href="https://github.com/Ryte11" target="_blank" class="post-link">
+                                        <a
+                                            href="https://github.com/Ryte11"
+                                            target="_blank"
+                                            class="post-link"
+                                        >
                                             Ver GitHub →
                                         </a>
                                     </div>
@@ -361,7 +391,6 @@ const { frontmatter } = Astro.props;
                             ))
                         )
                     }
-
                 </div>
             </section>
 

@@ -2,16 +2,105 @@
 import HamburgerAstro from "../components/Hamburger.astro";
 ---
 
-<header>
-    <nav class="nav_links">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog-main/">Blog</a>
-    </nav>
+<nav>
     <div class="hamburger">
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
     </div>
-</header>
-<style></style>
+    <div class="nav_links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/blog-main">Blog</a>
+    </div>
+</nav>
+
+<style>
+    nav {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav_links {
+        z-index: 10;
+        display: flex;
+        gap: 60px;
+    }
+
+    .nav_links a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 30px;
+        transition: all 0.5s;
+    }
+
+    .nav_links a:hover {
+        transform: translateY(-4px);
+        color: #000d8a;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+    }
+
+    .line {
+        display: block;
+        width: 25px;
+        height: 7px;
+        margin: 5px auto;
+        background-color: #000;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @media screen and (max-width: 636px) {
+        nav {
+            justify-content: flex-end;
+        }
+
+        .hamburger {
+            display: block;
+            z-index: 100;
+        }
+
+        .nav_links {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            gap: 0;
+            flex-direction: column;
+            background-color: white;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            transition: 0.3s;
+            padding-top: 80px;
+        }
+
+        .nav_links.active {
+            left: 0;
+        }
+
+        .nav_links a {
+            margin: 16px 0;
+        }
+
+        /* Animación del hamburger */
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: translateY(15px) rotate(45deg);
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
+</style>
+
+

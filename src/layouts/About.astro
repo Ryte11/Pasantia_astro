@@ -75,6 +75,23 @@ const proyectos = [
 <html lang="es">
     <head>
         <BaseHead />
+        <script is:inline>
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav_links");
+
+            hamburger?.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks?.classList.toggle("active");
+            });
+
+            // Cerrar menú al hacer click en un enlace
+            document.querySelectorAll(".nav_links a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    hamburger?.classList.remove("active");
+                    navLinks?.classList.remove("active");
+                });
+            });
+        </script>
         <title>Sobre Mi | Luisangel Ramirez</title>
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -103,7 +120,7 @@ const proyectos = [
             }
 
             .container {
-                width: 950px;
+                width: 100%;
                 max-width: 1200px;
                 margin: 0 auto;
                 padding: 0 2rem;
@@ -398,6 +415,127 @@ const proyectos = [
             .social-icon:hover {
                 background: var(--accent-color);
             }
+            /* Media Queries */
+            @media (max-width: 1200px) {
+                .info-grid {
+                    width: 100%;
+                    gap: 2rem;
+                }
+
+                .card {
+                    width: calc(50% - 2rem);
+                }
+            }
+
+            @media (max-width: 968px) {
+                header h1 {
+                    font-size: 2.8rem;
+                }
+
+                .container {
+                    padding: 0 1.5rem;
+                }
+
+                .info-grid {
+                    gap: 1.5rem;
+                }
+
+                .card {
+                    width: calc(100% - 2rem);
+                    margin: 0 auto;
+                }
+            }
+
+            @media (max-width: 768px) {
+                header {
+                    padding: 3rem 1rem 5rem;
+                }
+
+                header h1 {
+                    font-size: 2.5rem;
+                }
+
+                .profile-image {
+                    width: 150px;
+                    height: 150px;
+                    font-size: 4rem;
+                }
+
+                .section-title {
+                    font-size: 1.75rem;
+                }
+
+                .info-grid {
+                    flex-direction: column;
+                }
+
+             
+                .proyecto-card {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: 480px) {
+                header h1 {
+                    font-size: 2rem;
+                }
+
+                header p {
+                    font-size: 1rem;
+                }
+
+                .profile-image {
+                    width: 120px;
+                    height: 120px;
+                    font-size: 3rem;
+                }
+
+                .section-title {
+                    font-size: 1.5rem;
+                }
+
+                .card {
+                    padding: 1.5rem;
+                }
+
+                .card-title {
+                    font-size: 1.2rem;
+                }
+
+                .proyecto-header h3 {
+                    font-size: 1.3rem;
+                }
+
+                .social-links {
+                    gap: 1rem;
+                }
+
+                .social-icon {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+
+            /* Ajustes de animaciones para dispositivos móviles */
+            @media (prefers-reduced-motion: reduce) {
+                .skill-progress {
+                    transition: none;
+                }
+
+                section {
+                    animation: none;
+                    opacity: 1;
+                    transform: none;
+                }
+
+                .proyecto-card:hover {
+                    transform: none;
+                }
+
+                .card:hover {
+                    transform: none;
+                }
+            }
 
             @media (max-width: 768px) {
                 header {
@@ -415,6 +553,51 @@ const proyectos = [
 
                 .section-title {
                     font-size: 1.75rem;
+                }
+            }
+            @media screen and (max-width: 636px) {
+                nav {
+                    justify-content: flex-end;
+                }
+
+                .hamburger {
+                    display: block;
+                    z-index: 100;
+                }
+
+                .nav_links {
+                    position: fixed;
+                    left: -100%;
+                    top: 0;
+                    gap: 0;
+                    flex-direction: column;
+                    background-color: white;
+                    width: 100%;
+                    height: 100vh;
+                    text-align: center;
+                    transition: 0.3s;
+                    padding-top: 80px;
+                }
+
+                .nav_links.active {
+                    left: 0;
+                }
+
+                .nav_links a {
+                    margin: 16px 0;
+                }
+
+                /* Animación del hamburger */
+                .hamburger.active .line:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .hamburger.active .line:nth-child(1) {
+                    transform: translateY(20px) rotate(45deg);
+                }
+
+                .hamburger.active .line:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
                 }
             }
         </style></head
@@ -777,6 +960,23 @@ const proyectos = [
                 if (card.querySelector(".skill-progress")) {
                     observer.observe(card);
                 }
+            });
+
+            // menu hambuerguesa
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav_links");
+
+            hamburger?.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks?.classList.toggle("active");
+            });
+
+            // Cerrar menú al hacer click en un enlace
+            document.querySelectorAll(".nav_links a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    hamburger?.classList.remove("active");
+                    navLinks?.classList.remove("active");
+                });
             });
         </script>
     </body>
